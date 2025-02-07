@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    <title>LitEra Digital</title>
+    <link rel="shortcut icon" href="./images/library.ico" type="image/x-icon" />
+    <meta name="description" content="Iluminamos tu mente, llave a la sabiduría" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kurale&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header>
+
+    <div class="title">
+
+        <img class="logo" src="./images/library.svg" alt="Logo">
+  
+        <h1>LitEra Digital</h1>
+      
+    </div>
+
+    <a type="button" id="button-open-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+      </svg>
+    </a>
+
+    <a type="button" id="button-close-menu">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+      </svg>
+    </a>
+
+    <nav id="menu">
+
+      <ul class="menu-options">
+
+        <li><a type="button" class="button-menu" id="users-btn" href="index.html">Usuarios</a></li>
+  
+        <li><a type="button" class="button-menu" id="books-btn" href="books.html">Libros</a></li>
+
+        <li><a type="button" class="button-menu" id="reservations-btn" href="reservations.html">Reservas</a></li>
+
+      </ul>
+
+    </nav>
+
+  </header>
+
+  <main> 
+
+    <h2>Iluminamos tu mente, llave a la sabiduría 👩🏻‍💻</h2>
+
+    <form id="new-user-form">
+
+      <h3>Crear usuario</h3>
+
+      <label for="name">Nombres y apellidos:</label>
+      <input type="text" placeholder="Ingrese sus nombres y apellidos" name="name" id="name" required>  
+      
+      <label for="email">Correo electrónico:</label>
+      <input type="email" placeholder="Ingrese su email" name="email" id="email" required>
+
+      <label for="birth">Fecha de nacimiento:</label>
+      <input type="date" placeholder="Ingrese su fecha de nacimiento" name="birth" id="birth"  min="1925-01-01" max="2015-12-31" required>
+
+      <button type="submit" id="submit-btn">Crear</button>
+
+    </form>
+
+    <div class="list" id="users">
+
+      <h3>Lista de usuarios</h3>
+
+      <div class="table-title">
+        <div class="nombre">Nombre</div>
+        <div class="nombre">Correo electrónico</div>
+        <div class="fecha">Fecha de nacimiento</div>
+        <div class="opt-user">Opciones</div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <a type="button" id="up-button" href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+  </svg></a>
+
+  <script src="./animations.js"></script>
+  <script src="./dist/users.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    AOS.init();
+  </script>
+  
+</body>
+
+</html>
