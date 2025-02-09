@@ -9,15 +9,11 @@
     --black: #0B0B0C;
     --light-black: #212121;
     --white: #FFFFFF;
-    --purple: #CDC1FF;
-    --pink:   #FFCCEA;
-    --light-yellow: #FFF6E3;
     --size-icons: 20px;
     --divisions: 16px;
     --division-navbar: 55px;
     --radius-button: 100px;
     --radius: 20px;
-    --shadow-container: 0px 2px 10px rgba(0, 0, 0, 0.50);
 }
 
 html {
@@ -41,7 +37,7 @@ body {
     position: fixed;
     bottom: var(--divisions);
     right: var(--divisions);
-    z-index: 3;
+    z-index: 2;
     background-color: var(--white);
     color: var(--black);
 }
@@ -275,18 +271,20 @@ form, .list {
     }
     form {
         grid-area: user-form;
-        max-height: calc(100% - (1 * var(--divisions)));
+        max-height: calc(100% - var(--divisions));
+        padding: 0px var(--divisions) var(--divisions) var(--divisions);
     }
     .list {
         grid-area: list;
-        height: calc(100% - (1 * var(--divisions)));
+        height: 100%;
+        padding: 0px var(--divisions);
     }
-
-    /* #users-elements, #books-elements, #reservations-elements {
-        display: flex;
-        flex-direction: column;
-        overflow-y: scroll;
-        scrollbar-width: none;
-    } */
+    .list-title, form h3 {
+        padding-top: var(--divisions);
+        position: sticky;
+        top: 0;
+        background-color: var(--light-black);
+        z-index: 3;
+    }
 
 }
