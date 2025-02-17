@@ -13,6 +13,7 @@ class Reservation {
     this.end = fin;
   }
 
+  //Setea la fecha de inicio de reservacion en el formato requerido
   startDate(today: any): string {
     console.log(today);
     const start = `${today.getFullYear()}-${
@@ -22,6 +23,7 @@ class Reservation {
     return start;
   }
 
+  //Calcula la fecha de fin de reservacion en funcion de la duracion escogida
   endDate(today: any): string {
     today = new Date(today);
     const moreDay = this.duration;
@@ -37,10 +39,12 @@ class Reservation {
     return end;
   }
 
+  //Setea opciones en el formulario de reservacion
   setOptions(): void {
     const startDate = document.getElementById("start");
     startDate?.setAttribute("min", this.startMin);
 
+    //Agrega en opciones los usuarios existentes en localStorage
     var usersStorage = localStorage.getItem("users");
     if (usersStorage != null) {
       const listUsers = document.getElementById("client");
@@ -57,6 +61,7 @@ class Reservation {
       });
     }
 
+    //Agrega en opciones los libros existentes en localStorage y que tengan copias disponibles
     var booksStorage = localStorage.getItem("books");
     if (booksStorage != null) {
       const listBooks = document.getElementById("book");
@@ -76,6 +81,7 @@ class Reservation {
     }
   }
 
+  //Enlista las reservaciones existentes en la localStorage
   setReservations(): void {
     const reservationsStorage = localStorage.getItem("reservations");
     if (reservationsStorage != null) {
@@ -92,6 +98,7 @@ class Reservation {
     }
   }
 
+  //Agrega las reservaciones a nuestro HTML
   listReservations(data: any, id: any): void {
     const divReservations = document.getElementById("reservations");
     if (divReservations) {
@@ -111,6 +118,7 @@ class Reservation {
     }
   }
 
+  //Elimina reservaciones de la localStorage y de la pagina web
   deleteReservation(reservationId: number): void {
     const reservationStorage = localStorage.getItem("reservations");
 
@@ -126,6 +134,7 @@ class Reservation {
     }
   }
 
+  //Crea nueva reservacion, lo agrega a localeStorage y lo enlista en la pagina web
   newReservation(): void {
     const urlReservation = (<HTMLFormElement>(
       document.getElementById("new-reservation-form")

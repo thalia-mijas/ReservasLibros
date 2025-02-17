@@ -19,6 +19,7 @@ class Book {
     this.availability = copias;
   }
 
+  //Enlista los libros existentes en la localStorage
   setBooks(): void {
     const booksStorage = localStorage.getItem("books");
     if (booksStorage != null) {
@@ -29,6 +30,7 @@ class Book {
     }
   }
 
+  //Agrega los libros a nuestro HTML
   listBooks(data: any, id: any): void {
     const divBooks = document.getElementById("books");
     if (divBooks) {
@@ -49,6 +51,7 @@ class Book {
     }
   }
 
+  //Elimina libros de la localStorage y de la pagina web
   deleteBook(bookId: number): void {
     const bookStorage = localStorage.getItem("books");
 
@@ -62,6 +65,7 @@ class Book {
     }
   }
 
+  //Crea nuevo libro, lo agrega a localeStorage y lo enlista en la pagina web
   newBook(): void {
     const urlBook = (<HTMLFormElement>document.getElementById("new-book-form"))
       .action;

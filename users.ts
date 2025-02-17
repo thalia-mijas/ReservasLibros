@@ -9,6 +9,7 @@ class User {
     this.birth = nacimiento;
   }
 
+  //Enlista los usuarios existentes en la localStorage
   setUsers(): void {
     const usersStorage = localStorage.getItem("users");
     if (usersStorage != null) {
@@ -19,6 +20,7 @@ class User {
     }
   }
 
+  //Agrega los usuarios a nuestro HTML
   listUsers(data: any, id: any): void {
     const divUsers = document.getElementById("users");
     if (divUsers) {
@@ -37,6 +39,7 @@ class User {
     }
   }
 
+  //Elimina usuarios de la localStorage y de la pagina web
   deleteUser(userId: number): void {
     const userStorage = localStorage.getItem("users");
 
@@ -50,6 +53,7 @@ class User {
     }
   }
 
+  //Crea nuevo usuario, lo agrega a localeStorage y lo enlista en la pagina web
   newUser(): void {
     const urlUser = (<HTMLFormElement>document.getElementById("new-user-form"))
       .action;
